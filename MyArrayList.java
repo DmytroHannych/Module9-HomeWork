@@ -25,10 +25,15 @@ public class MyArrayList <T> implements List<T> {
 
     @Override
     public boolean remove(int index) {
-        for (int i = index; i< counter; i++)
-            myArray[i] = myArray[i+1];
-        myArray[counter] = null;
-        counter--;
+        int size = 0;
+        for (int i = 0; i < counter; i++) {
+            if (i == index) {
+                size++;
+            }
+            myArray[i] = myArray[size];
+//            myArray[counter] = null;
+               size++;
+        }
         return true;
     }
 
@@ -53,6 +58,9 @@ public class MyArrayList <T> implements List<T> {
 
     @Override
     public String toString() {
+        if(counter == 0){
+            return "{}";
+        }
         return "MyArrayList{" +
                 "myArray=" + Arrays.toString(myArray) +
                 '}';

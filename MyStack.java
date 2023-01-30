@@ -28,7 +28,6 @@ public class MyStack<T> {
     {
         Object[] tempArray = array;
         array = new Object[--maxSize];
-
         for (int i = 0; i < array.length; i++)
         {
             array[i] = i < index ? tempArray[i] : tempArray[i + 1];
@@ -63,6 +62,9 @@ public class MyStack<T> {
 
     @Override
     public String toString() {
+        if(size == 0){
+            return "{}";
+        }
         return "MyStack{" +
                 "array=" + Arrays.toString(array) +
                 '}';

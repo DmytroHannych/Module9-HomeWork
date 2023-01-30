@@ -22,19 +22,24 @@ public class MyQueue<T> {
     }
 
     public Object poll(){
-        Object temp = elements[head++];
-
-
-        if (head ==сapacity) {
-            head = 0;
+        int size = 0;
+        Object temp = elements[0];
+//        if (head ==сapacity) {
+//            head = 0;
+//        }
+        for (int i = 0; i < counter; i++) {
+            if(i == head){
+              size++;
+            }
+            elements[i] = elements[size];
+            size++;
         }
         counter--;
         return temp;
    }
 
    public Object peek(){
-
-      Object temp = elements[head++];
+        Object temp = elements[head];
        return temp;
    }
 
@@ -46,6 +51,9 @@ public class MyQueue<T> {
    }
    @Override
     public String toString() {
+        if(counter == 0){
+            return "{}";
+        }
         return "MyQueue{" +
                 "elements=" + Arrays.toString(elements) +
                 '}';

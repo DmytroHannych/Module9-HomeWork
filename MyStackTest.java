@@ -9,8 +9,8 @@ public class MyStackTest {
     stack.push(3);
     stack.push(2);
     System.out.println(stack);
-    stack.remove(2);
-      System.out.println("stack.Size() = " + stack.size());
+    System.out.println("stack.Size() = " + stack.size());
+      stack.remove(2);
       System.out.println(stack);
   }
 }

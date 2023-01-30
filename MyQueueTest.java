@@ -11,6 +11,7 @@ public class MyQueueTest {
         System.out.println(string.size());
         System.out.println(string.peek());
         System.out.println(string.poll());
+        System.out.println(string);
         string.clear();
         System.out.println(string);
     }

@@ -44,15 +44,12 @@ public class MyLinkedList <T> implements List<T> {
 
     @Override
     public boolean remove(int index) {
-
         Node current = first;
-
         if (index == 0) {
             size--;
             first = current.next;
             return true;
         }
-
         Node temp = null;
         for (int i = 1; i <= index; i++) {
             temp = current;
@@ -78,6 +75,7 @@ public class MyLinkedList <T> implements List<T> {
 
     @Override
     public T get(int index) {
+        Objects.checkIndex(index, size);
         Node result = first;
         for (int i = 0; i < index; i++) {
             result = result.next;
@@ -90,7 +88,7 @@ public class MyLinkedList <T> implements List<T> {
         StringBuilder write = new StringBuilder();
         Node<T> node = first;
         if (node == null) {
-            write.append(" null");
+            write.append("{}");
         } else while (node != null) {
             write.append(node.element).append(" ");
             node = node.next;
