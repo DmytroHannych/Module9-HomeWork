@@ -44,6 +44,7 @@ public class MyLinkedList <T> implements List<T> {
 
     @Override
     public boolean remove(int index) {
+        Objects.checkIndex(index, size);
         Node current = first;
         if (index == 0) {
             size--;

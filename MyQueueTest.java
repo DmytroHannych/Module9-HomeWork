@@ -7,6 +7,8 @@ public class MyQueueTest {
         string.add("first");
         string.add("second");
         string.add("tree");
+        string.add("tree");
+        string.add("tree");
         System.out.println(string);
         System.out.println(string.size());
         System.out.println(string.peek());

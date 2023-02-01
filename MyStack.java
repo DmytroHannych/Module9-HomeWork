@@ -7,7 +7,7 @@ public class MyStack<T> {
     private Object[] array = new Object[maxSize];
     private int size = 0;
 
-    public void push(Object value)
+    public void push(T value)
     {
         Object[] tempArray = array;
 
@@ -26,6 +26,7 @@ public class MyStack<T> {
 
     public void remove(int index)
     {
+        Objects.checkIndex(index, size);
         Object[] tempArray = array;
         array = new Object[--maxSize];
         for (int i = 0; i < array.length; i++)
@@ -41,10 +42,6 @@ public class MyStack<T> {
     }
     public int size()
     {
-        size = 0;
-        for (Object item: array) {
-            size++;
-        }
         return size;
     }
 
