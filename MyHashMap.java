@@ -61,11 +61,11 @@ public class MyHashMap<K, V> {
                     }
                 }
             }
+            length++;
         } else {
             resize(table.length * 2);
             put(key, value);
         }
-        length++;
     }
 
     private void resize(int i) {
