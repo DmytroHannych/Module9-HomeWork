@@ -1,7 +1,6 @@
 package module9;
 
 public class MyQueueTest {
-
     public static void main(String[] args) {
         MyQueue<String> string = new MyQueue<>();
         string.add("first");

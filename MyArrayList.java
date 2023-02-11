@@ -1,19 +1,19 @@
 package module9;
 
-
 import java.util.Arrays;
 import java.util.Objects;
 
-public class MyArrayList <T> implements List<T> {
-    private int DEFAULT_CAPACITY =  10;
+public class MyArrayList<T> implements List<T> {
+    private int DEFAULT_CAPACITY = 10;
 
     private Object[] myArray = new Object[DEFAULT_CAPACITY];
     private int counter = 0;
+
     @Override
     public void add(T value) {
-        if(counter == myArray.length-1)
-            resize(myArray.length*2);
-            myArray[counter++] = value;
+        if (counter == myArray.length - 1)
+            resize(myArray.length * 2);
+        myArray[counter++] = value;
     }
 
     private void resize(int i) {
@@ -31,9 +31,7 @@ public class MyArrayList <T> implements List<T> {
                 size++;
             }
             myArray[i] = myArray[size];
-//            myArray[counter] = null;
-               size++;
-
+            size++;
         }
         counter--;
         return true;
@@ -57,16 +55,15 @@ public class MyArrayList <T> implements List<T> {
         return (T) myArray[index];
     }
 
-
     @Override
     public String toString() {
-        if(counter == 0){
+        if (counter == 0) {
             return "{}";
         }
-        Object [] secondarray = new Object[counter];
+        Object[] secondarray = new Object[counter];
         for (int i = 0; i < counter; i++) {
             if (myArray[i] != null) {
-            secondarray[i] = myArray[i];
+                secondarray[i] = myArray[i];
             }
         }
 

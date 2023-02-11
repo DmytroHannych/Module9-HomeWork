@@ -1,7 +1,5 @@
 package module9;
 
-
-
 public class MyLinkedListTest {
     public static void main(String[] args) {
         List<String> string = new MyLinkedList<>();

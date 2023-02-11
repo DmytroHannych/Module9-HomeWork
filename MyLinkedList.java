@@ -2,13 +2,13 @@ package module9;
 
 import java.util.Objects;
 
-public class MyLinkedList <T> implements List<T> {
+public class MyLinkedList<T> implements List<T> {
 
 
     static class Node<T> {
         T element;
         Node<T> next;
-          Node<T> prev;
+        Node<T> prev;
 
         public Node(T element) {
             this.element = element;
@@ -21,10 +21,10 @@ public class MyLinkedList <T> implements List<T> {
                     '}';
         }
     }
+
     private int size;
     transient Node<T> first;
     transient Node<T> last;
-
 
     @Override
     public void add(T value) {
@@ -56,7 +56,6 @@ public class MyLinkedList <T> implements List<T> {
             temp = current;
             current = current.next;
         }
-
         temp.next = current.next;
         size--;
         return false;
@@ -96,7 +95,6 @@ public class MyLinkedList <T> implements List<T> {
         }
         return write.toString();
     }
-
 }
 
 
